@@ -35,6 +35,7 @@ var proximity = {
         /*argscheck.checkArgs('F', 'proximity.getProximityState', arguments);
         exec(successCallback, null, "Proximity", "getProximityState", []);*/
         exec(null, null, "Proximity", "getProximityState", []);
+        return(0);
     },
 
     /**
