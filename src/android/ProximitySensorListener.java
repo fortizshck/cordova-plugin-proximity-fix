@@ -249,7 +249,7 @@ public class ProximitySensorListener extends CordovaPlugin implements SensorEven
      *
      * @return          status
      */
-    public int getStatus() {
+    public int getProximityState() {
         return this.status;
     }
 
