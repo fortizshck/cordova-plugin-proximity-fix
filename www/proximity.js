@@ -32,10 +32,8 @@ var proximity = {
      *  @param successCallback  callback function which delivers the boolean sensor state
      */
     getProximityState: function(successCallback) {
-        /*argscheck.checkArgs('F', 'proximity.getProximityState', arguments);
-        exec(successCallback, null, "Proximity", "getProximityState", []);*/
-        
-        return(exec(null, null, "Proximity", "getProximityState", []));
+        argscheck.checkArgs('F', 'proximity.getProximityState', arguments);
+        exec(successCallback, null, "Proximity", "getProximityState", []);
     },
 
     /**
