@@ -140,10 +140,11 @@ public class ProximitySensorListener extends CordovaPlugin implements SensorEven
         }
         else if (action.equals("getProximityState")) {
             int responseValue = this.status;
-            String responseText = responseValue.toString();
+            // String responseText = responseValue.toString();
             try {
-                responseText += ", " + arguments.getString(0);
-                callbackContext.success(responseText);
+                // responseText += ", " + arguments.getString(0);
+                // callbackContext.success(responseText);
+                callbackContext.success(responseValue);
                 return true;
             } catch (JSONException e) {
                 callbackContext.error(e.getMessage());
