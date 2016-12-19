@@ -139,7 +139,15 @@ public class ProximitySensorListener extends CordovaPlugin implements SensorEven
             this.stop();
         }
         else if (action.equals("getProximityState")) {
-            return (this.getProximityState());
+            
+            String responseText = this.status;
+            try {
+                responseText += ", " + arguments.getString(0);
+                callbackContext.success(responseText);
+                return true;
+            } catch (JSONException e) {
+                callbackContext.error(e.getMessage());
+            }        
         }
         else {
             // Unsupported action
@@ -246,6 +254,7 @@ public class ProximitySensorListener extends CordovaPlugin implements SensorEven
         this.timeStamp = System.currentTimeMillis();
         this.proximity = proximity;
         this.setStatus(ProximitySensorListener.RUNNING);
+
     }
 
     /**
@@ -254,8 +263,7 @@ public class ProximitySensorListener extends CordovaPlugin implements SensorEven
      * @return          status
      */
     public boolean getProximityState() {
-        /* return this.status; */
-        return false;
+        return this.status;
     }
 
     /**
